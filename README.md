@@ -2,7 +2,7 @@
 
 > (You can also using another Sql Database but you need extra configuration)
 
-For keeping the database have low memory usage i'm not use extra library for serving Web Server like ``(Express or Something Else..)`` instead of using the library i prefer doing the same thing 
+The purpose of this code is for schedule the backup your data you served with Sql DBMS, this code have low memory usage i'm not use extra library for serving Web Server like ``(Express or Something Else..)`` instead of using the library i prefer doing the same thing 
 just only using ``http:server`` from ``Node Js`` and for executing the shell script from node js i use ``child_process``. 
 
 What case fit for this Cron Jobs Worker ?
