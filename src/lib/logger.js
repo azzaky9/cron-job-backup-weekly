@@ -1,7 +1,16 @@
 const winston = require("winston");
 
 const logFormat = winston.format.printf(({ level, message, timestamp }) => {
-  return `[${timestamp}]: - ${level}: ${message}`;
+  return `${level}: ${message} - [Executed At: ${new Date(
+    timestamp
+  ).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  })}]`;
 });
 
 /**

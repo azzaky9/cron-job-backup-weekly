@@ -10,16 +10,15 @@ dotenv.config();
 const server = createServer();
 
 async function main() {
-  const cron = new CronJob(
-    "* * 23 * * 5",
-    function () {
-      console.log("============== Cron Fire =============");
+  const cron = CronJob.from({
+    cronTime: "0 12 * * 2",
+    onTick: () => {
+      logger.info(`🔄 Cron Job do their job `);
       executeBackup();
     },
-    "Cron sucessfully execute without problem.",
-    true,
-    "America/Los_Angeles"
-  );
+    start: true,
+    timeZone: "America/Los_Angeles"
+  });
 }
 
 main()
